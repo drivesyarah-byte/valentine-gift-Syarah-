@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruang Kenangan Cinta Kita - Happy Valentine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #FFF8DC, #FFB6C1);
+            color: #8B0000;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        h1, h2 {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        p {
+            font-weight: 300;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        .intro {
+            animation: fadeIn 2s ease-in;
+            padding: 50px 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .section {
+            margin: 60px 0;
+            opacity: 0;
+            animation: slideUp 1s ease-out forwards;
+            padding: 40px;
+            background: rgba(255, 248, 220, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .heart {
+            color: #8B0000;
+            font-size: 2em;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .interactive {
+            background: #8B0000;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+            margin: 20px 0;
+        }
+        .interactive:hover {
+            background: #B22222;
+            transform: scale(1.05);
+        }
+        .surprise {
+            display: none;
+            background: rgba(255, 182, 193, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            animation: fadeIn 2s ease-in;
+        }
+        .memory {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .memory-item {
+            background: #FFF8DC;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 250px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .memory-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .footer {
+            margin-top: 50px;
+            padding: 20px;
+            background: rgba(139, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Halaman Pembuka -->
+        <div class="intro">
+            <h1>🌹 Selamat Datang di Ruang Kenangan Kita 🌹</h1>
+            <p>Ada sesuatu yang spesial menunggumu di sini, sayang. Sebuah dunia kecil yang kubuat khusus untukmu. Klik tombol di bawah untuk membuka pintu ke kenangan kita. Siap untuk sedikit kejutan dan kehangatan? 😊💕</p>
+            <button class="interactive" onclick="nextSection(1)">Masuk ke Dalam</button>
+        </div>
+
+        <!-- Section 1: Cerita Cinta -->
+        <div id="section1" class="section" style="display: none;">
+            <h2>Perjalanan Cinta Kita</h2>
+            <p>Ingat ya, pertama kali kita ketemu? Kamu dengan senyum malu-malu yang bikin aku langsung jatuh hati. Dari obrolan malam itu yang nggak pernah kelar, sampai sekarang, setiap hari terasa seperti petualangan baru. Cinta kita kayak kopi—manis, pahit, tapi selalu bikin ketagihan. Dan aku nggak mau ganti sama apa pun. ☕❤️</p>
+            <p>Lucu juga, waktu pertama kali jalan bareng, aku nervous banget sampe tangan berkeringat. Tapi kamu bikin semuanya jadi mudah. Terima kasih ya, karena kamu ada di hidupku.</p>
+            <button class="interactive" onclick="nextSection(2)">Lanjut ke Momen Spesial</button>
+        </div>
+
+        <!-- Section 2: Momen Bermakna -->
+        <div id="section2" class="section" style="display: none;">
+            <h2>Momen-Momen Sederhana Kita</h2>
+            <p>Momen-momen kecil ini yang bikin hidupku lebih berwarna. Klik salah satu untuk kenangan lucu atau nostalgia!</p>
+            <div class="memory">
+                <div class="memory-item" onclick="showMemory('Jalan-jalan malam hari, tangan saling genggam sambil ngobrol hal konyol. Kamu selalu bikin aku ketawa lepas. 🌙')">Jalan-jalan malam hari, tangan saling genggam. 🌙</div>
+                <div class="memory-item" onclick="showMemory('Makan malam romantis di rumah, cuma kita berdua. Kamu masak, aku cuci piring—meski aku sering bikin rusak. Tapi itu yang bikin kita lebih dekat. 🍝')">Makan malam romantis di rumah, cuma kita berdua. 🍝</div>
+                <div class="memory-item" onclick="showMemory('Liburan spontan yang bikin kita lebih dekat. Ingat waktu kita tersesat di jalan? Malah jadi petualangan seru! ✈️')">Liburan spontan yang bikin kita lebih dekat. ✈️</div>
+                <div class="memory-item" onclick="showMemory('Foto pertama kita bareng, masih polos banget. Sekarang lihat lagi, aku jatuh cinta ulang. Nostalgia banget! 📸')">Foto pertama kita bareng, masih polos banget. 📸</div>
+            </div>
+            <button class="interactive" onclick="nextSection(3)">Lanjut ke Hal yang Kusukai</button>
+        </div>
+
+        <!-- Section 3: Hal yang Disukai -->
+        <div id="section3" class="section" style="display: none;">
+            <h2>Hal-Hal yang Kusukai dari Dirimu</h2>
+            <p>Kamu tahu, aku suka banget cara kamu mikirin orang lain dulu sebelum diri sendiri. Itu yang bikin aku jatuh cinta lagi setiap hari. Dan senyum kamu? Bisa bikin hari buruk jadi indah. Oh, jangan lupain cara kamu ketawa—lepas dan tulus, bikin aku ikut seneng.</p>
+            <p>Diam-diam, aku juga suka banget waktu kamu marah-marah kecil karena aku lupa sesuatu. Lucu, tapi manis. Kamu bikin hidupku lebih hidup. 😘</p>
+            <p>Scroll ke bawah untuk kejutan terakhir... atau tekan tombol rahasia ini jika penasaran! (Hover di sini untuk efek)</p>
+            <button class="interactive" onclick="showSurprise()">Tombol Rahasia</button>
+        </div>
+
+        <!-- Surprise Section -->
+        <div id="surprise" class="surprise">
+            <h2>Surprise! ❤️</h2>
+            <p>Aku mau bilang, terima kasih ya, karena kamu ada di hidupku. Kamu bikin aku lebih baik, lebih bahagia, dan lebih percaya diri. Ke depan, aku pengen kita terus seperti ini—jalan bareng, tertawa bareng, jatuh cinta ulang setiap hari, dan hadapi apa pun bersama. Kamu adalah hadiah terbesarku, yang nggak bisa dibungkus kertas tapi bisa dikenang selamanya.</p>
+            <p>Happy Valentine, sayang. I love you more than words can say. Kamu sempurna buatku. 💕</p>
+            <div class="heart">💖</div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Dibuat dengan cinta khusus untukmu. Jika kamu suka, simpan ini sebagai kenangan kita. 😊</p>
+        </div>
+    </div>
+
+    <script>
+        function nextSection(num) {
+            const prev = document.getElementById('section' + (num - 1));
+            const next = document.getElementById('section' + num);
+            if (prev) prev.style.display = 'none';
+            if (next) next.style.display = 'block';
+        }
+
+        function showMemory(message) {
+            alert(message);
+        }
+
+        function showSurprise() {
+            document.getElementById('surprise').style.display = 'block';
+        }
+
+        // Surprise trigger on scroll to bottom
+        window.addEventListener('scroll', function() {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 10) {
+                document.getElementById('surprise').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
